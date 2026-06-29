@@ -1,4 +1,4 @@
-# ⚽ World Cup Betting Agent — predice el Mundial 2026 (y mide la verdad)
+#  World Cup Betting Agent — predice el Mundial 2026 (y mide la verdad)
 
 > Un sistema que pronostica partidos del **Mundial 2026** con un **modelo
 > estadístico** entrenado sobre 150 años de fútbol internacional, lo explica con
@@ -10,25 +10,25 @@ La pregunta que casi nadie responde con honestidad es: *“vale, tu modelo predi
 números. Spoiler: **el modelo predice muy bien… y aun así no le gana al mercado.**
 Y esa, contada con datos, es la parte más interesante.
 
-> 🎓 **Herramienta de análisis / educativa.** Solo modo *paper* (dinero ficticio).
+>  **Herramienta de análisis / educativa.** Solo modo *paper* (dinero ficticio).
 > No es asesoría financiera ni recomendación de apuestas. Más abajo, el aviso completo.
 
 ---
 
-## ✨ Qué hace de verdad
+##  Qué hace de verdad
 
 No es una demo de juguete: es un motor modular con varias capas, todas funcionando
 y con tests.
 
-- 📈 **Modelo Poisson sobre ratings internacionales reales.** Aprende la fuerza
+- **Modelo Poisson sobre ratings internacionales reales.** Aprende la fuerza
   **ofensiva y defensiva** y un **Elo** de cada selección a partir de **~49.000
   partidos internacionales (1872–hoy)**, con **decaimiento temporal** (lo reciente
   pesa más) y **cancha neutral** (como en un Mundial). De ahí salen
   `P(1/X/2)` y `P(Over/Under 2.5)`.
-- 🔎 **Motor de valor + staking disciplinado.** Detecta *value bets*
+- **Motor de valor + staking disciplinado.** Detecta *value bets*
   (`edge = prob·cuota − 1`), arma combinadas solo con selecciones de valor y
   calcula el stake con **Kelly fraccionado con tope** (nunca persigue un objetivo).
-- 🧪 **Backtest contra cuotas REALES.** Reproduce torneos pasados sin fuga de
+- **Backtest contra cuotas REALES.** Reproduce torneos pasados sin fuga de
   información y reporta **accuracy, Brier, log-loss, calibración** y **ROI real**
   contra las cuotas de cierre de casas *sharp* (Pinnacle/Bet365).
 - 🤖 **Agente con Google Gemini (function calling).** El LLM **orquesta y redacta**;
@@ -36,12 +36,12 @@ y con tests.
   deterministas y explica la recomendación.
 - 📲 **Bot de Telegram** de suscripción (verificación +18, gating, disclaimers) y
   **modo paper en vivo** sobre el Mundial 2026 vía OddsPapi.
-- 🌐 **Página web de predicciones** autocontenida, con barra 1/X/2 por partido y
+- **Página web de predicciones** autocontenida, con barra 1/X/2 por partido y
   una **“combinada del día”**.
 
 ---
 
-## 📊 El hallazgo honesto (lo que lo hace creíble)
+## El hallazgo honesto (lo que lo hace creíble)
 
 Cualquiera puede decir “mi modelo acierta”. Lo difícil es **demostrar qué tan
 bien** y **ser honesto cuando no alcanza**. Esto es lo que salió:
@@ -96,7 +96,7 @@ y eso era justo la ilusión que las cuotas reales destaparon.
 
 ---
 
-## 🧠 Cómo está hecho
+## Cómo está hecho
 
 Arquitectura modular con una regla de oro: **la decisión es de Python; el LLM solo
 orquesta y explica.**
@@ -112,12 +112,12 @@ orquesta y explica.**
 | `src/reporting/` | Reportes, **predicciones partido a partido** y la **página web**. |
 | `src/storage/` · `src/settlement/` | SQLite del paper trading y liquidación con resultados reales. |
 
-✅ **~100 tests con pytest**, todos **mockeados (sin red)**: modelo, ratings,
+ **~100 tests con pytest**, todos **mockeados (sin red)**: modelo, ratings,
 backtest, ROI con cuotas, entitlement, scheduler, el bucle de Gemini y la página.
 
 ---
 
-## 🚀 Cómo usarlo
+## Cómo usarlo
 
 ```bash
 git clone <tu-repo>  &&  cd worldcup-betting-agent
@@ -154,7 +154,7 @@ python main.py agent --ask "Analiza los partidos de mañana y explícame qué ve
 python main.py bot --with-scheduler                  # bot de Telegram + jobs diarios
 ```
 
-### 🌐 La página de predicciones
+###  La página de predicciones
 
 `python main.py pagina` genera un **único HTML autocontenido**
 (`reports/predicciones.html`, responsive, sin dependencias) con la predicción del
@@ -165,7 +165,7 @@ comando para actualizarla — ideal junto a tu `paper-run` diario.
 
 ---
 
-## 💡 Qué aprendí
+##  Qué aprendí
 
 - **Calibrar > acertar el favorito.** Un modelo útil no solo dice quién gana: dice
   *con qué probabilidad*, y esa probabilidad tiene que ser fiable. La tabla de
@@ -182,7 +182,7 @@ comando para actualizarla — ideal junto a tu `paper-run` diario.
 
 ---
 
-## ⚠️ Aviso responsable
+##  Aviso responsable
 
 Esta es una **herramienta de análisis con fines informativos y educativos**.
 **No** es asesoría financiera ni una recomendación de apuestas. Funciona solo en
