@@ -1,0 +1,42 @@
+# Claves y secretos — NUNCA subir
+.env
+
+# Caché de respuestas de la API
+.cache/
+*.cache
+
+# Base de datos local (paper trading)
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+
+# Datos locales: histórico de Kaggle (results.csv) y cuotas (odds.csv).
+# No se versionan (tamaño / licencia / datos del usuario). Ver README.
+data/*.csv
+data/*.json
+
+# Reportes y página generados (se regeneran con los comandos)
+reports/*.md
+reports/*.csv
+reports/*.html
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Editores / SO
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
